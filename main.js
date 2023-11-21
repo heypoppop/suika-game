@@ -79,6 +79,7 @@ window.onkeydown = (event) => {
 
   switch (event.code) {
     case "KeyA":
+    case "ArrowLeft":
       if (interval)
         return;
 
@@ -92,6 +93,7 @@ window.onkeydown = (event) => {
       break;
 
     case "KeyD":
+    case "ArrowRight":
       if (interval)
         return;
 
@@ -104,7 +106,8 @@ window.onkeydown = (event) => {
       }, 5);
 
       break;
-
+    
+    case "ArrowDown":
     case "KeyS":
       currentBody.isSleeping = false;
       disableAction = true;
@@ -119,8 +122,8 @@ window.onkeydown = (event) => {
 window.onkeyup = (event) => {
   switch (event.code) {
     case "KeyA":
-      clearInterval(interval);
-      interval = null;
+    case "ArrowLeft":
+    case "ArrowRight":
     case "KeyD":
       clearInterval(interval);
       interval = null;
